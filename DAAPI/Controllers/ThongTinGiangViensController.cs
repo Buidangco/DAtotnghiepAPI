@@ -17,7 +17,7 @@ namespace DAAPI.Controllers
     [RoutePrefix("api")]
     public class ThongTinGiangViensController : ApiController
     {
-        private DA_TOTNGHIEPEntities2 db = new DA_TOTNGHIEPEntities2();
+        private DA_TOTNGHIEPEntities3 db = new DA_TOTNGHIEPEntities3();
 
         // GET: api/ThongTinGiangViens
         public List<ThongTinGiangVien> GetThongTinGiangViens()
@@ -158,6 +158,21 @@ namespace DAAPI.Controllers
         private bool ThongTinGiangVienExists(byte id)
         {
             return db.ThongTinGiangViens.Count(e => e.ID == id) > 0;
+        }
+
+        [HttpGet]
+        [Route("ThongKeNam")]
+        public List<ThongTinGiangVien> ThongKeNam()
+        {
+            List <ThongTinGiangVien> thongTinGiangNams = db.ThongTinGiangViens.Where(x => x.GioiTinh.ToString() == "True").ToList();
+            return thongTinGiangNams;
+        } 
+        [HttpGet]
+        [Route("ThongKeNu")]
+        public List<ThongTinGiangVien> ThongKeNu()
+        {
+            List<ThongTinGiangVien> thongTinGiangNus = db.ThongTinGiangViens.Where(x => x.GioiTinh.ToString() == "False").ToList();
+            return thongTinGiangNus;
         }
     }
 }
