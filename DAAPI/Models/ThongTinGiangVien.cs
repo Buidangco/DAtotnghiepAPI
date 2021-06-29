@@ -32,6 +32,9 @@ namespace DAAPI.Models
         public string Anh { get; set; }
         public Nullable<byte> IdKhoa { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
+        public string Email { get; set; }
+        public string SDT { get; set; }
+        public string Code { get; set; }
     
         public virtual ChucVu ChucVu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -24,6 +24,7 @@ namespace DAAPI.Models
         {
             throw new UnintentionalCodeFirstException();
         }
+    
         public virtual DbSet<ChucVu> ChucVus { get; set; }
         public virtual DbSet<DuAn> DuAns { get; set; }
         public virtual DbSet<Khoa> Khoas { get; set; }
